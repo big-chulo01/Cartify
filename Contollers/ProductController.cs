@@ -9,20 +9,20 @@ using Microsoft.EntityFrameworkCore;
 public class ProductController : ControllerBase
 {
     private readonly ApplicationDbContext _context;
-    private readonly ILogger<ProductController> _logger;
 
-    public ProductController(ApplicationDbContext context, ILogger<ProductController> logger)
+    public ProductController(ApplicationDbContext context)
     {
         _context = context;
-        _logger = logger;
     }
 
+    // GET: api/Product
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
     {
         return await _context.Products.Include(p => p.Category).ToListAsync();
     }
 
+    // GET: api/Product/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Product>> GetProduct(int id)
     {
@@ -37,4 +37,30 @@ public class ProductController : ControllerBase
         return product;
     }
 
+    // GET: api/Product/category/5
+    [HttpGet("category/{categoryId}")]
+    public async Task<ActionResult<IEnumerable<Product>>> GetProductsByCategory(int categoryId)
+    {
+        return await _context.Products
+            .Include(p => p.Category)
+            .Where(p => p.CategoryId == categoryId)
+            .ToListAsync();
+    }
+
+    // POST: api/Product
+    [HttpPost]
+    public async Task<ActionResult<Product>> PostProduct(Product product)
+    {
+        // Validate category exists
+        var categoryExists = await _context.Categories.AnyAsync(c => c.Id == product.CategoryId);
+        if (!categoryExists)
+        {
+            return BadRequest("Invalid CategoryId");
+        }
+
+        _context.Products.Add(product);
+        await _context.SaveChangesAsync();
+
+        return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+    }
 }
