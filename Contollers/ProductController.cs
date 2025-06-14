@@ -37,5 +37,4 @@ public class ProductController : ControllerBase
         return product;
     }
 
-    // Add other CRUD operations as needed...
 }
