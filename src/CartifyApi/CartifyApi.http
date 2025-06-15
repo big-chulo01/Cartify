@@ -1,0 +1,6 @@
+@CartifyApi_HostAddress = http://localhost:5155
+
+GET {{CartifyApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
