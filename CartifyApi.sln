@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartifyApi", "src\CartifyApi\CartifyApi.csproj", "{0C80A549-EC57-4344-B775-6E253A0FEC03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartifyApi.Infrastructure", "src\CartifyApi.Infrastructure\CartifyApi.Infrastructure.csproj", "{C9C5182E-3E71-43FB-926A-904EB0FED1F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cartify.Core", "src\Cartify.Core\Cartify.Core.csproj", "{C9C5182E-3E71-43FB-926A-904EB0FED1F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
 EndProject
