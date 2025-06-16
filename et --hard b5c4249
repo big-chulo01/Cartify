@@ -1,0 +1,7 @@
+[33m57b7549[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: commit: unit tests for each model
+[33mb5c4249[m HEAD@{1}: commit: Updated code, file and folder restructiuring
+[33mdfc3dcb[m HEAD@{2}: commit: Added new endpoint GET /api/Product/category/{categoryId} and Added new endpoint POST /api/Product
+[33mbbce609[m HEAD@{3}: commit: edit
+[33mdbee009[m HEAD@{4}: commit: controllers and Dbcontext
+[33m45ec8d7[m HEAD@{5}: commit: created models
+[33m652b7a2[m HEAD@{6}: clone: from https://github.com/big-chulo01/Cartify
